@@ -1,0 +1,14 @@
+name: mi-practica-docker
+
+services:
+  angular-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REPO_URL: "https://github.com/Pyedgar/Repo_Tecnicos.git"
+    image: mi-angular-nginx:latest
+    container_name: contenedor-angular-tecnicos
+    ports:
+      - "8080:80"
+    restart: unless-stopped
